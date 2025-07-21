@@ -1,0 +1,52 @@
+// busca_caminho_simples.robo
+// O robô tenta se mover em direção a um "destino"
+VAR destino_x = 5;
+VAR destino_y = 5;
+
+IMPRIMIR "Iniciando busca de caminho para (" + destino_x + ", " + destino_y + ")";
+
+// Supondo que robot_x e robot_y são variáveis globais ou acessíveis, se não, precisaria de funções para obter a posição atual do robô.
+// Para este exemplo, 'robot_x' e 'robot_y' são acessíveis.
+
+REPETIR 10 VEZES { // Limite de número de tentativas de movimento
+    // Move na direção X
+    SE (robot_x < destino_x) ENTAO {
+        MOVER FRENTE 1; // Assumindo direção LESTE ou adaptando
+        IMPRIMIR "Movendo para LESTE.";
+    } SENAO {
+        SE (robot_x > destino_x) ENTAO {
+            GIRAR DIREITA; // Ou gira 180 graus se estiver na direção certa
+            GIRAR DIREITA;
+            MOVER FRENTE 1;
+            GIRAR DIREITA;
+            GIRAR DIREITA; // Volta para direção original
+            IMPRIMIR "Movendo para OESTE.";
+        }
+    }
+
+    // Move na direção Y
+    SE (robot_y < destino_y) ENTAO {
+        GIRAR DIREITA;
+        MOVER FRENTE 1;
+        GIRAR ESQUERDA;
+        IMPRIMIR "Movendo para NORTE.";
+    } SENAO {
+        SE (robot_y > destino_y) ENTAO {
+            GIRAR ESQUERDA;
+            MOVER FRENTE 1;
+            GIRAR DIREITA;
+            IMPRIMIR "Movendo para SUL.";
+        }
+    }
+
+    IMPRIMIR "Posicao atual do robo: (" + robot_x + ", " + robot_y + ")";
+
+    SE (robot_x == destino_x) ENTAO {
+        SE (robot_y == destino_y) ENTAO {
+            IMPRIMIR "Destino alcançado!";
+            // REPETIR 0 VEZES {} para "break" do loop
+            // Ou apenas o loop termina naturalmente se não houver mais comandos
+        }
+    }
+}
+IMPRIMIR "Busca de caminho finalizada.";

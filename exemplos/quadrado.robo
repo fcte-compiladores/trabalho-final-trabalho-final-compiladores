@@ -1,0 +1,11 @@
+// quadrado.robo
+// O robô desenha um quadrado de lado 5
+VAR lado = 5;
+
+REPETIR 4 VEZES {
+    MOVER FRENTE lado;
+    IMPRIMIR "Movendo lado do quadrado...";
+    GIRAR DIREITA;
+}
+
+IMPRIMIR "Quadrado desenhado!";

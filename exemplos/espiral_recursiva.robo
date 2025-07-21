@@ -1,0 +1,27 @@
+// espiral_recursiva.robo
+// Simula uma espiral com loops aninhados e decremento
+VAR tamanho_passo = 10;
+VAR num_giros = 4;
+
+// Declara-se passos_interno uma única vez, antes do loop externo
+VAR passos_interno = 0; 
+
+REPETIR num_giros VEZES {
+    IMPRIMIR "Giro externo...";
+    MOVER FRENTE tamanho_passo;
+    GIRAR DIREITA;
+    
+    // Apenas reatribui-se o valor
+    SET passos_interno = 1; 
+    REPETIR 3 VEZES { 
+        MOVER FRENTE passos_interno;
+        GIRAR ESQUERDA;
+        SET passos_interno = passos_interno + 1;
+    }
+    
+    SET tamanho_passo = tamanho_passo - 2; 
+    SE (tamanho_passo < 1) ENTAO {
+        SET tamanho_passo = 1; 
+    }
+}
+IMPRIMIR "Simulação de espiral concluída!";
