@@ -8,4 +8,4 @@ Este repositório contém o projeto final da disciplina de **Compiladores**. Ele
 
 | Nome                    | Matrícula                    | Turma                    |
 | ----------------------- | ---------------------------- | ------------------------ |
-| \Carlos Eduardo de Sousa Paz | \222022064 | \Turma 02 |
+| Carlos Eduardo de Sousa Paz | 222022064 | Turma 02 |
