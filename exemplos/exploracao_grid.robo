@@ -1,0 +1,30 @@
+// exploracao_grid.robo
+// O robô explora um grid 3x3 e "pega" um item imaginário
+VAR pos_x_alvo = 2;
+VAR pos_y_alvo = 1;
+VAR item_encontrado = 0; // 0 = Falso, 1 = Verdadeiro
+
+IMPRIMIR "Iniciando exploração do grid...";
+
+REPETIR 3 VEZES {
+    REPETIR 3 VEZES {
+        IMPRIMIR "Posicao atual: " + robot_x + ", " + robot_y;
+        SE (robot_x == pos_x_alvo) ENTAO {
+            SE (robot_y == pos_y_alvo) ENTAO {
+                IMPRIMIR "Item encontrado na posicao do alvo!";
+                PEGAR;
+                SET item_encontrado = 1;
+            }
+        }
+        MOVER FRENTE 1; // Assume que cada movimento avança 1 unidade
+    }
+    GIRAR DIREITA; // Gira para a próxima linha/coluna
+}
+
+SE (item_encontrado == 1) ENTAO {
+    IMPRIMIR "Item foi coletado!";
+} SENAO {
+    IMPRIMIR "Item não foi encontrado.";
+}
+
+IMPRIMIR "Exploração finalizada.";

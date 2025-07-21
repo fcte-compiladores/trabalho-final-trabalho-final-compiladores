@@ -1,0 +1,6 @@
+// hello_robot.robo
+IMPRIMIR "Ola, robo!";
+MOVER FRENTE 10;
+GIRAR DIREITA;
+MOVER FRENTE 5;
+IMPRIMIR "Terminei o primeiro percurso!";
