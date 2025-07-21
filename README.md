@@ -6,8 +6,6 @@ Este repositório contém o projeto final da disciplina de **Compiladores**. Ele
 
 ## Integrante
 
-Preencha a tabela abaixo com os dados do grupo.
-
 | Nome                    | Matrícula                    | Turma                    |
 | ----------------------- | ---------------------------- | ------------------------ |
-| \[Carlos Eduardo de Sousa Paz] | \[222022064] | \[Turma 02] |
+| \Carlos Eduardo de Sousa Paz | \222022064 | \Turma 02 |
