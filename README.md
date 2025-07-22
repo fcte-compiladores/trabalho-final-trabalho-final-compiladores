@@ -12,7 +12,7 @@ Este repositório contém o projeto final da disciplina de **Compiladores**. Ele
 
 ## Introdução
 
-Este projeto implementa um interpretador para a linguagem **RoboScript**, uma DSL desenvolvida especificamente para simular o controle de robôs. O interpretador foi construído seguindo as fases fundamentais estudadas em saqla de aula na disciplina de Compiladores, ministradas pelo professor Fábio Mendes:
+Este projeto implementa um interpretador para a linguagem **RoboScript**, uma DSL desenvolvida especificamente para simular o controle de robôs. O interpretador foi construído seguindo as fases fundamentais estudadas em sala de aula na disciplina de Compiladores, ministrada pelo professor Fábio Mendes.
 
 * **Análise Léxica:** transforma o código-fonte em uma sequência de tokens.
 * **Análise Sintática:** constrói uma Árvore Sintática Abstrata (AST) a partir dos tokens, verificando a gramática da linguagem.
@@ -38,8 +38,8 @@ GIRAR DIREITA;            # Gira o robô 90 graus para a direita
 ### Comandos de Ação
 
 ```text
-PEGAR;                              # O robô tenta pegar um objeto no local atual
-SOLTAR;                             # O robô solta o objeto que está segurando
+PEGAR;                               # O robô tenta pegar um objeto no local atual
+SOLTAR;                              # O robô solta o objeto que está segurando
 IMPRIMIR "<mensagem_ou_expressao>";  # Imprime mensagem ou valor de expressão
 ```
 
@@ -67,7 +67,7 @@ Operadores de comparação: `==`, `!=`, `<`, `>`, `<=`, `>=`.
 
 Uso de parênteses `()` para agrupamento e precedência.
 
-O operador `+` também concatena strings se **um dos operandos** for string.
+O operador `+` também concatena strings se um dos operandos for string.
 
 ### Estruturas de Controle
 
@@ -213,24 +213,11 @@ Para executar qualquer exemplo:
 ```bash
 python main.py exemplos/nome_do_arquivo.robo
 ```
-
 ---
 
-## Referências
-
-Para o projeto foi utiliizado referências abaixo, que orientaram a construção do interpretador em suas diversas fases.
-
-**VANINI, F. A. Construção de Compiladores: Parte 1: Introdução, linguagens e gramáticas. Campinas: IC - Unicamp**. Disponível em: https://www.ic.unicamp.br/~vanini/mc910/Parte1.pdf. Acesso em: 21 jul. 2025.
-
-**TOMASETTI, Federico. Parsing in Python: all the tools and libraries you can use. Tomassetti.me**. Disponível em: https://tomassetti.me/parsing-in-python/. Acesso em: 21 jul. 2025.
-
-**FARIA, Daniel; BAPTISTA, Tiago João; HENRIQUES, Pedro Rangel. Upgrade of Lark Compiler Generator to Support Attribute Grammars**. Disponível em: https://drops.dagstuhl.de/storage/01oasics/oasics-vol120-slate2024/OASIcs.SLATE.2024.7/OASIcs.SLATE.2024.7.pdf. Acesso em: 21 jul. 2025.
-
-**SHINAN, Erez. Lark documentation**. Disponível em: https://lark-parser.readthedocs.io/en/stable/. Acesso em: 21 jul. 2025.
-
-**PYTEST.ORG. pytest documentation**. Disponível em: https://docs.pytest.org/en/stable/. Acesso em: 21 jul. 2025.
-
-**MENDES, Fábio. 2025-1**, 2025. Disponível em: https://github.com/fcte-compiladores/2025-1. Acesso em: 21 jul. 2025.
+## Escopo Entregue vs Não Entregue
+Entregue: Movimentação básica, variáveis escalares (int/string), condicionais, laços, impressão, estado do robô.
+Não Entregue: Funções/recursão real, arrays/estruturas compostas, múltiplos robôs, ambiente gráfico, análise semântica estática.
 
 ---
 
@@ -239,7 +226,7 @@ Para o projeto foi utiliizado referências abaixo, que orientaram a construção
 A estrutura do repositório segue uma organização modular para facilitar a compreensão, manutenção e testes.
 
 ```text
-trabalho-final-comp/
+trabalho-final-compiladores/
 ├── src/                      # Código-fonte principal do interpretador
 │   ├── __init__.py           # Marca 'src' como pacote Python
 │   ├── lexer.py              # Analisador Léxico
@@ -290,7 +277,7 @@ trabalho-final-comp/
 
 ---
 
-### Interpretação
+## Interpretação
 
 **Arquivo:** `src/interpreter.py`
 
@@ -300,5 +287,38 @@ trabalho-final-comp/
 * Realiza análise semântica dinâmica durante a travessia (por ex.: verificação de tipos em tempo de execução; prevenção de divisão por zero; resolução de variáveis).
 * Simula as ações do robô (movimento, giro, pegar/soltar) exibindo resultados no console.
 * Utiliza `src/environment.py` para gerenciar escopos e valores de variáveis durante a execução.
+
+---
+
+## Bugs/Limitações/Problemas Conhecidos
+
+
+O interpretador RoboScript, apesar de funcional, possui as seguintes limitações principais:
+
+* Comandos Robóticos Básicos: Suporta apenas movimentos e ações fundamentais, sem recursos avançados como sensores complexos, manipulação de múltiplos objetos ou comunicação entre robôs.
+
+* Tipagem Simplificada: Utiliza tipagem dinâmica, sem verificação de tipos em tempo de "compilação", apenas em tempo de execução para certas operações.
+
+* Ausência de Recursão Explícita: Não há suporte direto para chamadas recursivas.
+
+* Simulação Abstrata: O ambiente e o robô são representados apenas por texto no console, sem interface gráfica ou física.
+
+---
+
+## Referências
+
+Para o projeto foi utiliizado referências abaixo, que orientaram a construção do interpretador em suas diversas fases.
+
+**VANINI, F. A. Construção de Compiladores: Parte 1: Introdução, linguagens e gramáticas. Campinas: IC - Unicamp**. Disponível em: https://www.ic.unicamp.br/~vanini/mc910/Parte1.pdf. Acesso em: 21 jul. 2025.
+
+**TOMASETTI, Federico. Parsing in Python: all the tools and libraries you can use. Tomassetti.me**. Disponível em: https://tomassetti.me/parsing-in-python/. Acesso em: 21 jul. 2025.
+
+**FARIA, Daniel; BAPTISTA, Tiago João; HENRIQUES, Pedro Rangel. Upgrade of Lark Compiler Generator to Support Attribute Grammars**. Disponível em: https://drops.dagstuhl.de/storage/01oasics/oasics-vol120-slate2024/OASIcs.SLATE.2024.7/OASIcs.SLATE.2024.7.pdf. Acesso em: 21 jul. 2025.
+
+**SHINAN, Erez. Lark documentation**. Disponível em: https://lark-parser.readthedocs.io/en/stable/. Acesso em: 21 jul. 2025.
+
+**PYTEST.ORG. pytest documentation**. Disponível em: https://docs.pytest.org/en/stable/. Acesso em: 21 jul. 2025.
+
+**MENDES, Fábio. 2025-1, 2025**. Disponível em: https://github.com/fcte-compiladores/2025-1. Acesso em: 21 jul. 2025.
 
 
