@@ -216,8 +216,8 @@ python main.py exemplos/nome_do_arquivo.robo
 ---
 
 ## Escopo Entregue vs Não Entregue
-Entregue: Movimentação básica, variáveis escalares (int/string), condicionais, laços, impressão, estado do robô.
-Não Entregue: Funções/recursão real, arrays/estruturas compostas, múltiplos robôs, ambiente gráfico, análise semântica estática.
+* Entregue: Movimentação básica, variáveis escalares (int/string), condicionais, laços, impressão, estado do robô.
+* Não Entregue: Funções/recursão real, arrays/estruturas compostas, múltiplos robôs, ambiente gráfico, análise semântica estática.
 
 ---
 
@@ -291,7 +291,6 @@ trabalho-final-compiladores/
 ---
 
 ## Bugs/Limitações/Problemas Conhecidos
-
 
 O interpretador RoboScript, apesar de funcional, possui as seguintes limitações principais:
 
