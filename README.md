@@ -306,7 +306,7 @@ O interpretador RoboScript, apesar de funcional, possui as seguintes limitaçõe
 
 ## Referências
 
-Para o projeto foi utiliizado referências abaixo, que orientaram a construção do interpretador em suas diversas fases.
+Para o projeto foram utiliizadas as referências abaixo, que orientaram a construção do interpretador em suas diversas fases.
 
 **VANINI, F. A. Construção de Compiladores: Parte 1: Introdução, linguagens e gramáticas. Campinas: IC - Unicamp**. Disponível em: https://www.ic.unicamp.br/~vanini/mc910/Parte1.pdf. Acesso em: 21 jul. 2025.
 
